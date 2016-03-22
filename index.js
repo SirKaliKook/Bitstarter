@@ -3,12 +3,13 @@ var app = express()
 var fs = require('fs')
 
 var infile = "index.html";
+var myBuf = fs.readFileSync(infile);
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
-  response.send(fs.readFiileSync(infile).toString('utf8'))
+  response.send(myBuf.toString('utf8'))
 })
 
 app.listen(app.get('port'), function() {
