@@ -8,7 +8,7 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
-  response.send(new Buffer(fs.readFiileSync(infile),"utf-8"))
+  response.sendf(s.readFiileSync(infile))
 })
 
 app.listen(app.get('port'), function() {
